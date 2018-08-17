@@ -355,8 +355,11 @@ class AVLTree:
             return False
 
     def __iter__(self):
-        return self.root.__iter__()
+        if self.root:
+            return self.root.__iter__()
+        return iter([])
 
     def clear_tree(self):
         self.root = None
         self.size = 0
+        
